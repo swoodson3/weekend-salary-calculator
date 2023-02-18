@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weekend-Salary-Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+    <div id="titleDiv">
+        <h1>Salary Calculator</h1>
+    </div>
+    </header>
+    <h2 id="addEmployee">Add Employee</h2>
+    <div id ="employeeContent">
+    <form class="employee-form" onSubmit="submitForm(event)">
+        First Name: <input id="first-input" type="text" />
+        Last Name: <input id="last-input" type="text" />
+        ID: <input id="id-input" type="number" />
+        Title: <input id="title-input" type="text" />
+        Annual Salary: <input id="salary-input" type="number" />
+        <input type="submit" value="Submit" />
+    </form>
+    <table id="employeeTable">
+    <h2>Employees</h2>
+    <thead>
+        <tr id="headerRow">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Annual Salary</th>
+        </tr>
+    </thead>
+    <tbody id="employeeData">
+
+    </tbody>
+    </table>
+    </div> 
+    
+    <script src="client.js"></script>
+</body>
+
+</html>
