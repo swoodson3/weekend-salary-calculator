@@ -16,14 +16,14 @@
     <h2 id="addEmployee">Add Employee</h2>
     <div id ="employeeContent">
     <form class="employee-form" onSubmit="submitForm(event)">
-        First Name: <input id="first-input" type="text" />
-        Last Name: <input id="last-input" type="text" />
-        ID: <input id="id-input" type="number" />
-        Title: <input id="title-input" type="text" />
-        Annual Salary: <input id="salary-input" type="number" />
+        First Name: <input id="firstInput" type="text" />
+        Last Name: <input id="lastInput" type="text" />
+        ID: <input id="idInput" type="number" />
+        Title: <input id="titleInput" type="text" />
+        Annual Salary: <input id="salaryInput" type="number" /><br />
         <input type="submit" value="Submit" />
     </form>
-    <table id="employeeTable">
+    <table id="employeeTableId">
     <h2>Employees</h2>
     <thead>
         <tr id="headerRow">
@@ -39,6 +39,9 @@
     </tbody>
     </table>
     </div> 
+    <div id="employeemonthlySalary">
+        <h2 id="monthlySalary">Total Monthly: $0.00</h2>
+    </div>
     
     <script src="client.js"></script>
 </body>

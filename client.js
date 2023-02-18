@@ -1,18 +1,22 @@
-let currentIndex = 0;
+
+let employees = [];
 
 
 function submitForm(event) {
     console.log('submitForm');
     event.preventDefault();
 
-    let firstVal = document.querySelector('#first-input').value;
-    let lastVal = document.querySelector('#last-input').value;
-    let idVal = document.querySelector('#id-input').value;
-    let titleVal = document.querySelector('#title-input').value;
-    let salaryVal = document.querySelector('#salary-input').value;
-    let employeeTable = document.querySelector('#employeeTable');
-    // let lastIndex = temperatureTable.lastElementChild;
-    // let tableData = Number(lastIndex.firstElementChild.innerHTML);
+    let firstVal = document.querySelector('#firstInput').value;
+    console.log(firstVal);
+    let lastVal = document.querySelector('#lastInput').value;
+    console.log(lastVal);
+    let idVal = document.querySelector('#idInput').value;
+    console.log(idVal);
+    let titleVal = document.querySelector('#titleInput').value;
+    console.log(titleVal);
+    let salaryVal = document.querySelector('#salaryInput').value;
+    console.log(salaryVal);
+    let employeeTable = document.querySelector('#employeeData');
     employeeTable.innerHTML += `
     <tr>
         <td>${firstVal}</td>
@@ -24,6 +28,12 @@ function submitForm(event) {
             <button class="delete-row" onClick="removeRow(event)">Delete</button>
         </td>
     </tr>
-    
 `;
 }
+
+function removeRow(event) {
+    event.target.parentElement.parentElement.remove();
+}
+
+
+
