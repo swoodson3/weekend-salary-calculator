@@ -1,7 +1,7 @@
 
 let employees = [];
 let monthlyCost = 20000;
-
+let monthlyTotal = 0;
 
 function addEmployees(event) {
     console.log('addEmployees');
@@ -29,43 +29,30 @@ function addEmployees(event) {
             <button class="delete-row" onClick="removeRow(event)">Delete</button>
         </td>
     </tr>
-`;
-employees.push() 
+`; 
+let person = {
+    firstName: firstVal,
+    lastName: lastVal,
+    id: idVal,
+    title: titleVal,
+    salary: salaryVal,
+}
+employees.push(person) 
+console.log(employees)
+for (let i =0; i < employees.length; i++) {
+    monthlyTotal += ((Number(employees[i].salary)) / 12)
+}
+document.querySelector('#employeeMonthlySalary').innerHTML = ` 
+<div>
+<h2> Total Monthly: ${monthlyTotal} </h2>
+</div>`
 }
 
 function removeRow(event) {
     event.target.parentElement.parentElement.remove();
 }
 
-function addEmployee(event) {
-    event.target.parentElement.employees.push()
-}
 
-function monthlySalary() {
-    let money = document.querySelector('#monthlySalary').value;
-    money.empty();
-    let monthlySalary = 0;
-    for (let i =0; i < employees.length; i++) {
-        monthlySalary += ((Number(employees[i].salaryVal)) / 12);
-    }
-    if (Number(monthlySalary) > monthlyCost) {
-        // Number(tempVal) turns a string into a number
-        monthlyCost = Number(monthlySalary);
-        document.querySelector('#monthlySalary').innerHTML = monthlyCost;
-    }
-    /*if (Number(monthlySalary) > 20000) {
-        ('#monthlySalary').css('background-color', 'red');
-    }*/
-
-}
-
-
-
-
-/*function table() {
-    let tableData = ('#employeeData');
-    tableData.empty()
-}*/
 
 
 
