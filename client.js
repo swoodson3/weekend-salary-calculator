@@ -6,6 +6,8 @@ function addEmployees(event) {
     console.log('addEmployees');
     event.preventDefault();
 
+
+
     let firstVal = document.querySelector('#firstInput').value;
     console.log(firstVal);
     let lastVal = document.querySelector('#lastInput').value;
@@ -16,6 +18,13 @@ function addEmployees(event) {
     console.log(titleVal);
     let salaryVal = document.querySelector('#salaryInput').value;
     console.log(salaryVal);
+    const formattedSalaryVal = Number(salaryVal).toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+
     let employeeTable = document.querySelector('#employeeData');
     employeeTable.innerHTML += `
     <tr>
@@ -23,7 +32,7 @@ function addEmployees(event) {
         <td>${lastVal}</td>
         <td>${idVal}</td>
         <td>${titleVal}</td>
-        <td>${salaryVal}</td>
+        <td>${formattedSalaryVal}</td>
         <td>
             <button class="delete-row" onClick="removeRow(event)">Delete</button>
         </td>
