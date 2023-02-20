@@ -1,0 +1,50 @@
+body {
+    margin: 10px;
+    padding: 0;
+    background-color: lightcyan;
+  }
+  
+  #titleDiv {
+    background-color: gray;
+    padding: 10px;
+  }
+
+#employeeContent {
+    padding-right: 2px;
+}
+.employee-form {
+    display: flex;
+  }
+  
+  .employee-form input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .employee-form input:last-child {
+    margin-right: 0;
+  }
+
+ #button{
+    float: right;
+ }
+
+  #headerRow {
+    background-color: lightgray;
+  }
+  
+  table, td, th {  
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 15px;
+  }
+  
+  tr:nth-child(even) {background-color: #f2f2f2;}
