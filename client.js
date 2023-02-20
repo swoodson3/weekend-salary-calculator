@@ -39,13 +39,22 @@ let person = {
 }
 employees.push(person) 
 console.log(employees)
-for (let i =0; i < employees.length; i++) {
-    monthlyTotal += ((Number(employees[i].salary)) / 12)
-}
-document.querySelector('#employeeMonthlySalary').innerHTML = ` 
-<div>
-<h2> Total Monthly: ${monthlyTotal} </h2>
-</div>`
+
+for (let i = 0; i < employees.length; i++) {
+    monthlyTotal += Number(employees[i].salary) / 12;
+  }
+  
+  const monthlySalaryElement = document.querySelector('#employeeMonthlySalary');
+  
+  if (monthlyTotal > 20000) {
+    monthlySalaryElement.style.backgroundColor = 'red';
+  }
+  
+  monthlySalaryElement.innerHTML = `
+    <div>
+      <h2>Total Monthly: ${monthlyTotal}</h2>
+    </div>
+  `;
 }
 
 function removeRow(event) {
