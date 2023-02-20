@@ -1,6 +1,5 @@
 
 let employees = [];
-let monthlyCost = 20000;
 let monthlyTotal = 0;
 
 function addEmployees(event) {
@@ -44,15 +43,22 @@ for (let i = 0; i < employees.length; i++) {
     monthlyTotal += Number(employees[i].salary) / 12;
   }
   
-  const monthlySalaryElement = document.querySelector('#employeeMonthlySalary');
+const monthlySalaryElement = document.querySelector('#employeeMonthlySalary');
   
   if (monthlyTotal > 20000) {
     monthlySalaryElement.style.backgroundColor = 'red';
   }
-  
+
+  const formattedMonthlyTotal = monthlyTotal.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+
   monthlySalaryElement.innerHTML = `
     <div>
-      <h2>Total Monthly: ${monthlyTotal}</h2>
+      <h2>Total Monthly: ${formattedMonthlyTotal}</h2>
     </div>
   `;
 }
