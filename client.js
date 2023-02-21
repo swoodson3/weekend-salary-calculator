@@ -34,7 +34,7 @@ function addEmployees(event) {
         <td>${titleVal}</td>
         <td>${formattedSalaryVal}</td>
         <td>
-            <button class="delete-row" onClick="removeRow(event)">Delete</button>
+            <button class="delete-row" onClick="removeRow(event, ${salaryVal})">Delete</button>
         </td>
     </tr>
 `;
@@ -47,10 +47,7 @@ function addEmployees(event) {
     }
     employees.push(person)
     console.log(employees)
-
-    for (let i = 0; i < employees.length; i++) {
-        monthlyTotal += Number(employees[i].salary) / 12;
-    }
+    monthlyTotal += Number(salaryVal) / 12;
 
     const monthlySalaryElement = document.querySelector('#employeeMonthlySalary');
 
@@ -72,9 +69,39 @@ function addEmployees(event) {
   `;
 }
 
-function removeRow(event) {
+function removeRow(event, salary) {
+    console.log(salary)
+    monthlyTotal -= Number(salary) / 12;
+    console.log(monthlyTotal)
+    const monthlySalaryElement = document.querySelector('#employeeMonthlySalary');
+
+    if (monthlyTotal > 20000) {
+        monthlySalaryElement.style.backgroundColor = 'red';
+    }
+
+    const formattedMonthlyTotal = monthlyTotal.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    monthlySalaryElement.innerHTML = `
+    <div style="text-align: right">
+      <h2>Total Monthly: ${formattedMonthlyTotal}</h2>
+    </div>
+  `;
     event.target.parentElement.parentElement.remove();
+
 }
+
+
+
+
+
+
+
+
 
 
 
